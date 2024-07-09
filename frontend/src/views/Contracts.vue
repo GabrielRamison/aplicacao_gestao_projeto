@@ -29,3 +29,20 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div>
+    <ContractList />
+  </div>
+</template>
+
+<script>
+import ContractList from '../components/ContractList.vue';
+
+export default {
+  components: {
+    ContractList,
+  },
+};
+</script>
+
