@@ -1,12 +1,11 @@
 // knexfile.js
-
 module.exports = {
   development: {
-    client: 'mysql',
+    client: 'mysql2',
     connection: {
       host: '127.0.0.1',
       user: 'root',
-      password: '',
+      password: '', // Adicione sua senha aqui se houver
       database: 'contracts_db'
     },
     migrations: {
@@ -17,11 +16,11 @@ module.exports = {
     }
   },
   production: {
-    client: 'mysql',
+    client: 'mysql2',
     connection: {
       host: '127.0.0.1',
       user: 'root',
-      password: '',
+      password: '', // Adicione sua senha aqui se houver
       database: 'contracts_db'
     },
     migrations: {

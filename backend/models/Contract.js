@@ -1,3 +1,4 @@
+// models/Contract.js
 const { Model } = require('objection');
 
 class Contract extends Model {
@@ -8,17 +9,15 @@ class Contract extends Model {
   static get jsonSchema() {
     return {
       type: 'object',
-      required: ['filePath', 'summary', 'signedDate', 'validUntil', 'partiesInvolved'],
-
+      required: ['title', 'signDate', 'expirationDate', 'partiesInvolved', 'summary'],
       properties: {
         id: { type: 'integer' },
-        filePath: { type: 'string' },
-        summary: { type: 'string' },
-        signedDate: { type: 'string' },
-        validUntil: { type: 'string' },
-        partiesInvolved: { type: 'string' },
-        status: { type: 'string', enum: ['active', 'expired'], default: 'active' },
-      },
+        title: { type: 'string', minLength: 1, maxLength: 255 },
+        signDate: { type: 'string', format: 'date' },
+        expirationDate: { type: 'string', format: 'date' },
+        partiesInvolved: { type: 'string', minLength: 1, maxLength: 255 },
+        summary: { type: 'string', minLength: 1, maxLength: 255 }
+      }
     };
   }
 }
