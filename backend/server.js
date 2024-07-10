@@ -1,7 +1,12 @@
 // backend/server.js
-const app = require('./app');
-const PORT = process.env.PORT || 3000;
+import express from "express";
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+const app = new express();
+
+app.get('/', (req, res) => {
+  res.send('Node Express com MySQL');
+})
+
+app.listen('3306', () => {
+  console.log('Running server');
+})

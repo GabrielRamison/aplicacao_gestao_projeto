@@ -1,15 +1,34 @@
-var knex = require ('knex')({
-  client: 'mysql2',
+// knexfile.js
+
+module.exports = {
+  development: {
+    client: 'mysql',
     connection: {
       host: '127.0.0.1',
       user: 'root',
       password: '',
-      database: 'contracts_db',
+      database: 'contracts_db'
     },
     migrations: {
-      directory: './migrations',
+      directory: './backend/migrations'
+    },
+    seeds: {
+      directory: './backend/seeds'
     }
-  
-  });
-
-module.exports = knex;
+  },
+  production: {
+    client: 'mysql',
+    connection: {
+      host: '127.0.0.1',
+      user: 'root',
+      password: '',
+      database: 'contracts_db'
+    },
+    migrations: {
+      directory: './backend/migrations'
+    },
+    seeds: {
+      directory: './backend/seeds'
+    }
+  }
+};
