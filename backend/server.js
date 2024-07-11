@@ -7,6 +7,6 @@ app.get('/', (req, res) => {
   res.send('Node Express com MySQL');
 })
 
-app.listen('3306', () => {
+app.listen('3000', () => {
   console.log('Running server');
 })
